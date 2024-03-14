@@ -3,6 +3,10 @@
 #include <QtWidgets/QMainWindow>
 #include "ui_MMZ_TestWork.h"
 
+#include <boost/multiprecision/cpp_int.hpp>
+
+using namespace boost::multiprecision;
+
 class MMZ_TestWork : public QMainWindow
 {
     Q_OBJECT
@@ -11,11 +15,10 @@ public:
     MMZ_TestWork(QWidget *parent = nullptr);
     ~MMZ_TestWork();
 
-    uint64_t Fib(size_t n) noexcept;
-
+    int1024_t Fib(qint64 n);
+    void FibCalculationUpdate();
 private:
     Ui::MMZ_TestWorkClass ui;
 
-    std::string m_fibResultLabelText;
-    std::vector<uint64_t> m_fibMemorized;
+    std::vector<int1024_t> m_fibMemorized;
 };
