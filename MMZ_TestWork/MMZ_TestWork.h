@@ -15,10 +15,9 @@ public:
     MMZ_TestWork(QWidget *parent = nullptr);
     ~MMZ_TestWork();
 
-    int1024_t Fib(qint64 n);
+    int1024_t FibNR(qint64 n);
+
     void FibCalculationUpdate();
 private:
     Ui::MMZ_TestWorkClass ui;
-
-    std::vector<int1024_t> m_fibMemorized;
 };
